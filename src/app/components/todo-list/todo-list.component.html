@@ -1,0 +1,10 @@
+<header>
+  <h5>Your To Do List</h5>
+</header>
+<div class="row">
+  <app-todo-list-entry [title]="entryTitle"
+                       (addedItem)="addThingToList($event)"></app-todo-list-entry>
+</div>
+<div class="row">
+  <app-todo-list-list [items]="stuff"></app-todo-list-list>
+</div>
