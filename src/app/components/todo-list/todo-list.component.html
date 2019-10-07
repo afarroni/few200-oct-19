@@ -6,5 +6,6 @@
                        (addedItem)="addThingToList($event)"></app-todo-list-entry>
 </div>
 <div class="row">
-  <app-todo-list-list [items]="stuff"></app-todo-list-list>
+  <app-todo-list-list (markedComplete)="markComplete($event)"
+                      [items]="stuff$ | async"></app-todo-list-list>
 </div>
