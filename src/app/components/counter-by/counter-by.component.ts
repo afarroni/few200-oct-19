@@ -17,7 +17,7 @@ export class CounterByComponent implements OnInit {
     this.by$ = this.store.select(selectCountingBy);
   }
 
-  setCountBy(by: number) {
+  setByCount(by: number) {
     this.store.dispatch(countBySet({ by }));
   }
 }

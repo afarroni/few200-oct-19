@@ -14,7 +14,7 @@ import { CounterComponent } from './components/counter/counter.component';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { reducers } from './reducers';
-import { CounterByComponent } from './component/counter-by/counter-by.component';
+import { CounterByComponent } from './components/counter-by/counter-by.component';
 
 
 @NgModule({
