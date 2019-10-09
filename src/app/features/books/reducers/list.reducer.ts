@@ -21,7 +21,12 @@ const reducerFunction = createReducer(
   on(actions.bookAdded, (state, action) => adapter.addOne(action.entity, state)),
   on(actions.bookDataLoadedSuccessfully, (state, action) =>
     adapter.addAll(action.books, { ...state, listLoaded: true })),
-  on(actions.loadBookData, (state) => ({ ...state, listLoaded: false }))
+  on(actions.loadBookData, (state) => ({ ...state, listLoaded: false })),
+  on(actions.bookAddedSuccessfully, (state, action) => {  // remove the old id and keep the new one in the new state
+    const tempState = adapter.removeOne(action.oldId, state);
+    return adapter.addOne(action.book, tempState); // ye olde switcheroo
+  }),
+  on(actions.bookAddedFailure, (state, action) => adapter.removeOne(action.book.id, state))
 );
 
 export function reducer(state: BookState = initialState, action: Action) {

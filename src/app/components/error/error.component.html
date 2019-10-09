@@ -1,0 +1,4 @@
+<div class="alert alert-danger"
+     *ngIf="(errorExists$ | async) == true">
+  There has been an error. {{ errorMessage$ | async }}
+</div>

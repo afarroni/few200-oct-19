@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { AppState } from './reducers';
+import { AppState, selectErrorExists, selectErrorMessage } from './reducers';
 import { Store } from '@ngrx/store';
 import { applicationStarted } from './actions/app.actions';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -13,6 +14,7 @@ export class AppComponent {
 
   constructor(private store: Store<AppState>) {
     store.dispatch(applicationStarted());
+
   }
 
   makeItBig() {

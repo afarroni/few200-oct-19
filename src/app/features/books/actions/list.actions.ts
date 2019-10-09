@@ -22,3 +22,13 @@ export const bookDataLoadedSuccessfully = createAction(
   '[books] loaded the book data successfully',
   props<{ books: BookEntity[] }>()
 );
+
+export const bookAddedSuccessfully = createAction(
+  '[books] book added successfully',
+  props<{ oldId: string, book: BookEntity }>()
+);
+
+export const bookAddedFailure = createAction(
+  '[books] book added failure',
+  props<{ book: BookEntity, message: string }>()
+);
