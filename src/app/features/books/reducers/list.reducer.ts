@@ -9,28 +9,21 @@ export interface BookEntity {
 }
 
 export interface BookState extends EntityState<BookEntity> {
-
+  listLoaded: boolean;
 }
 
 export const adapter = createEntityAdapter<BookEntity>();
 
-// const initialState = adapter.getInitialState();
-const initialState: BookState = {
-  ids: ['1', '2'],
-  entities: {
-    1: { id: '1', title: 'War of the Worlds', author: 'Wells' },
-    2: { id: '2', title: 'Call of the Cthulhu', author: 'Lovecraft' }
-  }
-};
+const initialState = adapter.getInitialState({ listLoaded: false });
 
 const reducerFunction = createReducer(
   initialState,
-  on(actions.bookAdded, (state, action) => adapter.addOne(action.entity, state))
+  on(actions.bookAdded, (state, action) => adapter.addOne(action.entity, state)),
+  on(actions.bookDataLoadedSuccessfully, (state, action) =>
+    adapter.addAll(action.books, { ...state, listLoaded: true })),
+  on(actions.loadBookData, (state) => ({ ...state, listLoaded: false }))
 );
 
 export function reducer(state: BookState = initialState, action: Action) {
   return reducerFunction(state, action);
 }
-
-
-

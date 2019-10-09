@@ -1,3 +1,7 @@
+<div class="alert alert"
+     *ngIf="model.length === 0">
+  <h3>You don't have any books, add some!</h3>
+</div>
 <div class="card"
      *ngFor="let book of model">
   <div class="card-body">

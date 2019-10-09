@@ -43,3 +43,4 @@ export const selectBookListItemModel = createSelector(selectBookListItemModelUns
 
 export const selectSortingByAuthor = createSelector(selectSortingBy, b => b === 'author');
 export const selectSortingByTitle = createSelector(selectSortingBy, b => b === 'title');
+export const selectListLoaded = createSelector(selectListBranch, b => b.listLoaded);
