@@ -6,7 +6,8 @@ export interface AppState {
 }
 
 export const reducers: ActionReducerMap<AppState> = {
-  // "reducer map"
+  // "reducer map" - map is an object with properties - the properties are
+  // reducer functions here, that return a state
   counter: fromCounter.reducer
 };
 

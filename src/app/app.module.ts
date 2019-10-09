@@ -34,9 +34,9 @@ import { BooksModule } from './features/books/books.module';
   ],
   imports: [
     BrowserModule,
-    BooksModule, // created outside the app
+    BooksModule, // created outside the app, only code needed
     AppRoutingModule,
-    StoreModule.forRoot(reducers),
+    StoreModule.forRoot(reducers), // forRoot means the root app
     StoreDevtoolsModule.instrument(),
     EffectsModule.forRoot([CounterEffects])
   ],

@@ -14,5 +14,5 @@ export const countReset = createAction(
 
 export const countBySet = createAction(
   '[app] count set by',
-  props<{ by: number }>()
+  props<{ by: number }>() // payload
 );
