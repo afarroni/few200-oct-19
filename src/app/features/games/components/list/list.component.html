@@ -9,11 +9,11 @@
     <p class="card-text">{{ game.publisher }}</p>
     <p>{{ game.platform }}</p>
     <input type="button"
-           class="btn btn-info"
+           class="btn btn-outline-info"
            (click)="markOnLoan(game.title)"
            value="Loaned">
     <input type="button"
-           class="btn btn-warning"
+           class="btn btn-outline-secondary"
            (click)="removeFromLoan(game.title)"
            value="Returned">
   </div>

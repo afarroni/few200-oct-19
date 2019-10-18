@@ -2,7 +2,8 @@
   <header class="page-header">
     <h3>All Mah Games</h3>
   </header>
-  <app-entry></app-entry>
+  <app-entry class="container"></app-entry>
   <app-list [model]="(games$ | async)"></app-list>
+  <br>
   <app-on-loan [model]="(loanedGames$ | async)"></app-on-loan>
 </div>

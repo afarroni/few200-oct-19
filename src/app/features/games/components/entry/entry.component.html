@@ -1,39 +1,37 @@
-<div class="container">
-  <form #entryForm="ngForm">
-    <div class="form-group">
-      <label for="title">Title</label>
-      <input class="form-control"
-             name="title"
-             required
-             [(ngModel)]="model.title"
-             #title="ngModel">
-    </div>
-    <div [hidden]="title.valid || title.pristine"
-         class="alert-danger">Title is required.</div>
-    <div class="form-group">
-      <label for="publisher">Publisher</label>
-      <input class="form-control"
-             name="publisher"
-             required
-             [(ngModel)]="model.publisher"
-             #publisher="ngModel">
-    </div>
-    <div [hidden]="publisher.valid || publisher.pristine"
-         class="alert-danger">Publisher is required.</div>
-    <label for="platform">Platform</label>
-    <select class="form-control"
-            name="platform"
-            required
-            [(ngModel)]="model.platform"
-            #platform>
-      <option *ngFor="let plat of platformOptions"
-              [value]="plat">{{plat}}</option>
-    </select>
-    <br>
-    <input type="button"
-           (click)="add(title, publisher, platform) ; entryForm.reset()"
-           class="btn btn-success"
-           [disabled]="!entryForm.form.valid"
-           value="Add">
-  </form>
-</div>
+<form #entryForm="ngForm">
+  <div class="form-group">
+    <label for="title">Title</label>
+    <input class="form-control"
+           name="title"
+           required
+           [(ngModel)]="model.title"
+           #title="ngModel">
+  </div>
+  <div [hidden]="title.valid || title.pristine"
+       class="alert-danger">Title is required.</div>
+  <div class="form-group">
+    <label for="publisher">Publisher</label>
+    <input class="form-control"
+           name="publisher"
+           required
+           [(ngModel)]="model.publisher"
+           #publisher="ngModel">
+  </div>
+  <div [hidden]="publisher.valid || publisher.pristine"
+       class="alert-danger">Publisher is required.</div>
+  <label for="platform">Platform</label>
+  <select class="form-control"
+          name="platform"
+          required
+          [(ngModel)]="model.platform"
+          #platform>
+    <option *ngFor="let plat of platformOptions"
+            [value]="plat">{{plat}}</option>
+  </select>
+  <br>
+  <input type="button"
+         (click)="add(title, publisher, platform) ; entryForm.reset()"
+         class="btn btn-success"
+         [disabled]="!entryForm.form.valid"
+         value="Add">
+</form>
