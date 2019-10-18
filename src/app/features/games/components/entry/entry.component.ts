@@ -28,11 +28,5 @@ export class EntryComponent implements OnInit {
     const publisher = pubEl.value;
     const platform = platEl.value;
     this.store.dispatch(addGame({ title, publisher, platform }));
-
-    // this.model = {
-    //   title: '',
-    //   publisher: '',
-    //   platform: this.platformOptions[0]
-    // };
   }
 }

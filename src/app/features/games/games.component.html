@@ -4,4 +4,5 @@
   </header>
   <app-entry></app-entry>
   <app-list [model]="(games$ | async)"></app-list>
+  <app-on-loan [model]="(loanedGames$ | async)"></app-on-loan>
 </div>

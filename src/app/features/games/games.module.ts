@@ -6,10 +6,11 @@ import { GamesComponent } from './games.component';
 import { StoreModule } from '@ngrx/store';
 import { featureName, reducers } from './reducers';
 import { FormsModule } from '@angular/forms';
+import { OnLoanComponent } from './components/on-loan/on-loan.component';
 
 
 @NgModule({
-  declarations: [ListComponent, EntryComponent, GamesComponent],
+  declarations: [ListComponent, EntryComponent, GamesComponent, OnLoanComponent],
   imports: [
     CommonModule,
     FormsModule,

@@ -8,5 +8,13 @@
     <h5 class="card-title">{{ game.title }} </h5>
     <p class="card-text">{{ game.publisher }}</p>
     <p>{{ game.platform }}</p>
+    <input type="button"
+           class="btn btn-info"
+           (click)="markOnLoan(game.title)"
+           value="Loaned">
+    <input type="button"
+           class="btn btn-warning"
+           (click)="removeFromLoan(game.title)"
+           value="Returned">
   </div>
 </div>
