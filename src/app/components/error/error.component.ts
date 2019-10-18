@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { selectErrorExists, selectErrorMessage, AppState } from 'src/app/reducers';
+import * as actions from '../../actions/app.actions';
 
 @Component({
   selector: 'app-error',
@@ -17,6 +18,10 @@ export class ErrorComponent implements OnInit {
   ngOnInit() {
     this.errorExists$ = this.store.select(selectErrorExists);
     this.errorMessage$ = this.store.select(selectErrorMessage);
+  }
+
+  closeError() {
+    this.store.dispatch(actions.clearApplicationFeatureError());
   }
 
 }

@@ -1,4 +1,8 @@
 <div class="alert alert-danger"
      *ngIf="(errorExists$ | async) == true">
   There has been an error. {{ errorMessage$ | async }}
+  <input type="button"
+         class="btn"
+         (click)="closeError()"
+         value="X">
 </div>
