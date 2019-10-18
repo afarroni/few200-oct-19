@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'few200';
+  title = 'FEW200';
 
   constructor(private store: Store<AppState>) {
     store.dispatch(applicationStarted());

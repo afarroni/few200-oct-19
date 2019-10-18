@@ -3,5 +3,5 @@
     <h3>All Mah Games</h3>
   </header>
   <app-entry></app-entry>
-  <app-list></app-list>
+  <app-list [model]="(games$ | async)"></app-list>
 </div>

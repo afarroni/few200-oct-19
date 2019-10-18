@@ -7,7 +7,7 @@ export const addGame = createAction(
   '[games] adding a game',
   ({ title, publisher, platform }: { title: string, publisher: string, platform: string }) => ({
     entity: {
-      id: currentId++,
+      id: 'T' + currentId++,
       title,
       publisher,
       platform
@@ -15,7 +15,3 @@ export const addGame = createAction(
   })
 );
 
-export const loadGameData = createAction(
-  '[games] loading games',
-  props<{ games: GameEntity[] }>()
-);

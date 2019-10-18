@@ -10,25 +10,29 @@ import { Store } from '@ngrx/store';
 })
 export class EntryComponent implements OnInit {
 
+  platformOptions = ['Switch', 'PC', 'Xbox'];
 
+  model = {
+    title: '',
+    publisher: '',
+    platform: ''
+  };
   constructor(private store: Store<GamesFeatureState>) { }
 
   ngOnInit() {
 
   }
 
-  add(titleEl: HTMLInputElement, pubEl: HTMLInputElement, platEl: HTMLButtonElement) {
+  add(titleEl: HTMLInputElement, pubEl: HTMLInputElement, platEl: HTMLInputElement) {
     const title = titleEl.value;
     const publisher = pubEl.value;
     const platform = platEl.value;
     this.store.dispatch(addGame({ title, publisher, platform }));
 
-    titleEl.value = '';
-    pubEl.value = '';
-    platEl.value = 'Platform';
-    titleEl.focus();
-  }
-  changeButton(name: string, platEl: HTMLButtonElement) {
-    platEl.value = name;
+    // this.model = {
+    //   title: '',
+    //   publisher: '',
+    //   platform: this.platformOptions[0]
+    // };
   }
 }

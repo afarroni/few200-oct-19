@@ -3,7 +3,7 @@ import { createReducer, Action, on } from '@ngrx/store';
 import * as actions from '../actions/list.actions';
 
 export interface GameEntity {
-  id: number;
+  id: string;
   title: string;
   publisher: string;
   platform: string;
@@ -11,17 +11,21 @@ export interface GameEntity {
 
 export const adapter = createEntityAdapter<GameEntity>();
 
-const initialState = adapter.getInitialState();
-//   {
-//   ids: [0],
-//   entities:
-//   {
-//     id: 0,
-//     title: 'Box Boy+Box Girl',
-//     publisher: 'Nintendo',
-//     platform: 'Switch'
-//   }
-// });
+const initialState: GameState = adapter.getInitialState({
+  ids: ['0', '1'],
+  entities: [{
+    id: 0,
+    title: 'Box Boy+Box Girl',
+    publisher: 'Nintendo',
+    platform: 'Switch'
+  },
+  {
+    id: 1,
+    title: 'Captain Toad Treasure Tracker',
+    publisher: 'Nintendo',
+    platform: 'Switch'
+  }]
+});
 
 export interface GameState extends EntityState<GameEntity> {
 
@@ -29,8 +33,7 @@ export interface GameState extends EntityState<GameEntity> {
 
 const reducerFunction = createReducer(
   initialState,
-  on(actions.addGame, (state, action) => adapter.addOne(action.entity, state)),
-  on(actions.loadGameData, (state, action) => adapter.addAll(action.games, { ...state }))
+  on(actions.addGame, (state, action) => adapter.addOne(action.entity, state))
 );
 
 export function reducer(state: GameState = initialState, action: Action) {
