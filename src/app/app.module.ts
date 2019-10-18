@@ -19,6 +19,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { CounterEffects } from './effects/counter.effects';
 import { BooksModule } from './features/books/books.module';
 import { ErrorComponent } from './components/error/error.component';
+import { GamesComponent } from './features/games/games.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { ErrorComponent } from './components/error/error.component';
     DashboardComponent,
     CounterComponent,
     CounterByComponent,
-    ErrorComponent
+    ErrorComponent,
+    GamesComponent
   ],
   imports: [
     BrowserModule,
