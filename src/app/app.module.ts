@@ -19,7 +19,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { CounterEffects } from './effects/counter.effects';
 import { BooksModule } from './features/books/books.module';
 import { ErrorComponent } from './components/error/error.component';
-import { GamesComponent } from './features/games/games.component';
+import { GamesModule } from './features/games/games.module';
 
 
 @NgModule({
@@ -33,12 +33,12 @@ import { GamesComponent } from './features/games/games.component';
     DashboardComponent,
     CounterComponent,
     CounterByComponent,
-    ErrorComponent,
-    GamesComponent
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
     BooksModule, // created outside the app, only code needed
+    GamesModule,
     AppRoutingModule,
     StoreModule.forRoot(reducers), // forRoot means the root app
     StoreDevtoolsModule.instrument(),

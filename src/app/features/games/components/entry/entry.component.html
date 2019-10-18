@@ -1,0 +1,35 @@
+<div>
+  <div class="form-group">
+    <label for="title">Title</label>
+    <input class="form-control"
+           name="title"
+           #title>
+  </div>
+  <div class="form-group">
+    <label for="publisher">Publisher</label>
+    <input class="form-control"
+           name="publisher"
+           #publisher>
+  </div>
+</div>
+
+<div class="dropdown">
+  <button class="btn btn-primary dropdown-toggle"
+          type="button"
+          data-toggle="dropdown"
+          #platform>Platform
+    <span class="caret"></span></button>
+  <ul class="dropdown-menu">
+    <li><a (click)="changeButton('Switch')">Switch</a></li>
+    <li><a (click)="changeButton('PC')">PC</a></li>
+    <li><a (click)="changeButton('Xbox')">Xbox</a></li>
+  </ul>
+</div>
+
+<div class="container">
+  <br>
+  <input type="button"
+         (click)="add(title, publisher, platform)"
+         class="btn btn-primary"
+         value="Add">
+</div>
